@@ -1,0 +1,7 @@
+-- disable warnings
+:set -Wno-unused-binds
+:set -Wno-unused-imports
+:set -Wno-unused-matches
+
+-- show more info on where an error occured
+:set -ferror-spans

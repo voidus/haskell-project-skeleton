@@ -1,0 +1,59 @@
+cabal-version:       2.4
+name:                haskell-project-skeleton
+synopsis:            An opinionated haskell project starter
+homepage:            https://github.com/voidus/haskell-project-skeleton
+bug-reports:         https://github.com/voidus/haskell-project-skeleton/issues
+version:             0.1.0.0
+license:             Unlicense
+license-file:        LICENSE
+author:              Simon Kohlmeyer
+maintainer:          simon.kohlmeyer@gmail.com
+
+common shared
+  default-language: Haskell2010
+  tested-with: GHC == { 8.10.1 }
+  build-depends:
+    , base ^>= 4.14
+    , relude ^>= 0.7
+  mixins:
+    , base hiding (Prelude)
+    , relude (Relude as Prelude)
+  ghc-options:
+    -Weverything
+    -Wno-missing-exported-signatures
+    -Wno-missing-import-lists
+    -Wno-missed-specialisations
+    -Wno-all-missed-specialisations
+    -Wno-missing-deriving-strategies
+    -Wno-unsafe
+    -Wno-safe
+    -Wno-missing-safe-haskell-mode
+    -Wno-missing-local-signatures
+    -Wno-monomorphism-restriction
+    -Wno-implicit-prelude
+  default-extensions:
+    EmptyCase
+    LambdaCase
+    MultiParamTypeClasses
+    MultiWayIf
+    NamedFieldPuns
+    OverloadedStrings
+    RecordWildCards
+    ScopedTypeVariables
+    TupleSections
+    TypeApplications
+    BlockArguments
+
+library
+  import: shared
+  hs-source-dirs: src
+  exposed-modules: Lib
+
+test-suite spec
+  import: shared
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs: tests
+  build-depends:
+    , haskell-project-skeleton
+    , hspec
