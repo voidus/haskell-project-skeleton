@@ -1,0 +1,3 @@
+--lint
+--reverse-errors
+--restart haskell-project-skeleton.cabal

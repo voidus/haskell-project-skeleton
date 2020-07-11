@@ -1,0 +1,15 @@
+-- Be fast
+:set -j
+
+-- Keep going on errors
+:set -fno-break-on-exceptions
+:set -fno-break-on-error
+
+-- disable warnings
+:set -Wno-unused-binds
+:set -Wno-unused-imports
+:set -Wno-unused-matches
+:set -Wno-missing-export-lists
+
+-- show more info on where an error occured
+:set -ferror-spans
