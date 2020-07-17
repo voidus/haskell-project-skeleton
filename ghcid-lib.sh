@@ -8,7 +8,7 @@ GHCID="$(tr '\n' ' ' <<-EOF
 	--test $(printf "%q" "$NOTIFY_LIB_BUILD")
 	--test-message="Notifying test-ghcid..."
 	--command $(printf "%q" "$COMMAND")
-	lib
+	lib:haskell-project-skeleton
 EOF
 )"
 

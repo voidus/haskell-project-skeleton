@@ -11,5 +11,6 @@ in
       ghcid
       hlint
       ormolu
+      hoogle
     ];
   }
